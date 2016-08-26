@@ -88,56 +88,59 @@ it's block context to compose even more pieces of your table structure:
 The root component that sets up the overall structure of the table and stores its `content`. When provided with content, this yields itself back to its template's block scope, and serves as
 a container for composing inner table components.
 
-* Parameters:
+  * Parameters:
 
-  + `content` {Array} **required**: A list of objects -- where each object will constitute
-  one of the table's rows.
+    + `content` {Array} **required**: A list of objects -- where each object will constitute
+    one of the table's rows.
 
-    default: null    
-
-
-  + `tableHeight` {number}: The initial / max height of the table. ✋ NOTE: The table will overflow if rows exceed this number.
-
-    default: 500    
+      default: null    
 
 
-  + `rowHeight` {number}: The height or each row in the table.
+    + `tableHeight` {number}: The initial / max height of the table. ✋ NOTE: The table will overflow if rows exceed this number.
 
-    default: 37    
-
-
-  + `paginate` {boolean}: Whether or not the table should use pagination. If true, a new page will fire the `on-load-more-rows` action when it enters the viewport.
-
-    default: false    
+      default: 500    
 
 
-  + `rowClasses` {Array}: CSS classes to apply to table rows.
+    + `rowHeight` {number}: The height or each row in the table.
 
-    default: null    
-
-
-  + `rowGroupDataName` {string}: The name of data property for row groups in the table columns.
-  If using a `collapsable` table, the `justa-table` component will add a dynamic key to each row in the `collapseTableData` based on the `rowGroupDataName` that recomputes the `collapseTableData`.
-
-    default: 'data'
-    constraint: Must be using a `collapsable` table with `collapseTableData`
+      default: 37    
 
 
-  + `hideOffscreenContent` {boolean}: Whether or not the component should hide out-of-viewport
-  content (vertical only for now).
+    + `paginate` {boolean}: Whether or not the table should use pagination. If true, a new page will fire the `on-load-more-rows` action when it enters the viewport.
 
-    default: false    
+      default: false    
 
 
-  + `offscreenContentBufferSize` {number}: The amount of additional rows to load on to the
-  top/bottom of the viewport when hiding offscreen content.
-  This will round up/down to the nearest row.
+    + `rowClasses` {Array}: CSS classes to apply to table rows.
 
-    default: 0.5
+      default: null    
+
+
+    + `rowGroupDataName` {string}: The name of data property for row groups in the table columns.
+    If using a `collapsable` table, the `justa-table` component will add a dynamic key to each row in the `collapseTableData` based on the `rowGroupDataName` that recomputes the `collapseTableData`.
+
+      default: 'data'
+      constraint: Must be using a `collapsable` table with `collapseTableData`
+
+
+    + `hideOffscreenContent` {boolean}: Whether or not the component should hide out-of-viewport
+    content (vertical only for now).
+
+      default: false    
+
+
+    + `offscreenContentBufferSize` {number}: The amount of additional rows to load on to the
+    top/bottom of the viewport when hiding offscreen content.
+    This will round up/down to the nearest row.
+
+      default: 0.5
 
 
 #### `basic-header`
 
+  * Parameters
+
+    + ``
 
 
 
