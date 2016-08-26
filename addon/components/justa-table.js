@@ -93,7 +93,7 @@ export default Component.extend(InViewportMixin, {
   hideOffscreenContent: false,
 
   /**
-    The amount of additonal rows to load on top/bottom of the viewport when
+    The amount of additional rows to load on top/bottom of the viewport when
     hiding offscreen content. Will round up/down to the nearest row.
     @public
     @default 0.5
