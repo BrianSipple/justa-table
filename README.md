@@ -26,7 +26,7 @@ Currently, this addon is still in its very early stages, but it _is_ usable.
 You're encouraged to browse the [full list of components available to your application](/addon/components/), but everything starts by initializing a `justa-table` block
 and passing data down to it as `content`:
 
-```htmlbars
+```hbs
 {{#justa-table content=content as |table|}}
   ....
 {{/justa-table}}
@@ -35,7 +35,7 @@ and passing data down to it as `content`:
 The `justa-table` component will yield back a `table` object, and you can use this within
 it's block context to compose even more pieces of your table structure:
 
-```htmlbars
+```hbs
 {{#justa-table content=content as |table|}}
   {{#table-columns table=table as |row|}}
 
@@ -64,56 +64,83 @@ it's block context to compose even more pieces of your table structure:
 {{/justa-table}}
 ```
 
+### Available Components
 
-### API
+  * [`justa-table`](#justa-table)
+  * [`basic-header`](#basic-header)
+  * [`collapsable-table-row`](#collapsable-table-row)
+  * [`collapsable-table-rows`](#collapsable-table-rows)
+  * [`column-resize-handle`](#column-resize-handle)
+  * [`fixed-table-columns`](#fixed-table-columns)
+  * [`in-viewport-checker`](#in-viewport-checker)
+  * [`table-column-resizer`](#table-column-resizer)
+  * [`table-column`](#table-column)
+  * [`table-columns`](#table-columns)
+  * [`table-row`](#table-row)
+  * [`table-rows`](#table-rows)
+  * [`table-vertical-collection`](#table-vertical-collection)
+  * [`table-vertical-item`](#table-vertical-item)
 
-As the example above shows, the `justa-table` component needs to be initialized with _at least_ a content arguments. Here's its full API:
+### Component APIs
 
+#### `justa-table`
 
-- `content` {Array} **required**: A list of objects -- where each object will constitute
-one of the table's rows.
+The root component that sets up the overall structure of the table and stores its `content`. When provided with content, this yields itself back to its template's block scope, and serves as
+a container for composing inner table components.
 
-  default: null    
+* Parameters:
 
+  + `content` {Array} **required**: A list of objects -- where each object will constitute
+  one of the table's rows.
 
-- `tableHeight` {number}: The initial / max height of the table. ✋ NOTE: The table will overflow if rows exceed this number.
-
-  default: 500    
-
-
-- `rowHeight` {number}: The height or each row in the table.
-
-  default: 37    
-
-
-- `paginate` {boolean}: Whether or not the table should use pagination. If true, a new page will fire the `on-load-more-rows` action when it enters the viewport.
-
-  default: false    
-
-
-- `rowClasses` {Array}: CSS classes to apply to table rows.
-
-  default: null    
-
-
-- `rowGroupDataName` {string}: The name of data property for row groups in the table columns.
-If using a `collapsable` table, the `justa-table` component will add a dynamic key to each row in the `collapseTableData` based on the `rowGroupDataName` that recomputes the `collapseTableData`.
-
-  default: 'data'
-  constraint: Must be using a `collapsable` table with `collapseTableData`
+    default: null    
 
 
-- `hideOffscreenContent` {boolean}: Whether or not the component should hide out-of-viewport
-content (vertical only for now).
+  + `tableHeight` {number}: The initial / max height of the table. ✋ NOTE: The table will overflow if rows exceed this number.
 
-  default: false    
+    default: 500    
 
 
-- `offscreenContentBufferSize` {number}: The amount of additional rows to load on to the
-top/bottom of the viewport when hiding offscreen content.
-This will round up/down to the nearest row.
+  + `rowHeight` {number}: The height or each row in the table.
 
-  default: 0.5
+    default: 37    
+
+
+  + `paginate` {boolean}: Whether or not the table should use pagination. If true, a new page will fire the `on-load-more-rows` action when it enters the viewport.
+
+    default: false    
+
+
+  + `rowClasses` {Array}: CSS classes to apply to table rows.
+
+    default: null    
+
+
+  + `rowGroupDataName` {string}: The name of data property for row groups in the table columns.
+  If using a `collapsable` table, the `justa-table` component will add a dynamic key to each row in the `collapseTableData` based on the `rowGroupDataName` that recomputes the `collapseTableData`.
+
+    default: 'data'
+    constraint: Must be using a `collapsable` table with `collapseTableData`
+
+
+  + `hideOffscreenContent` {boolean}: Whether or not the component should hide out-of-viewport
+  content (vertical only for now).
+
+    default: false    
+
+
+  + `offscreenContentBufferSize` {number}: The amount of additional rows to load on to the
+  top/bottom of the viewport when hiding offscreen content.
+  This will round up/down to the nearest row.
+
+    default: 0.5
+
+
+#### `basic-header`
+
+
+
+
 
 
 ## Development
